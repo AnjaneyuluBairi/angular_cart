@@ -11,6 +11,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartService } from './cart.service';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -18,10 +19,11 @@ import { ShippingComponent } from './shipping/shipping.component';
      HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: 'productList', component: ProductListComponent },
        { path: 'products/:productId', component: ProductDetailsComponent },
         { path: 'cart', component: CartComponent },
          { path: 'shipping', component: ShippingComponent },
+         {path:'',component:LoginComponent},
     ])
   ],
   declarations: [
@@ -31,7 +33,8 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    LoginComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService]
